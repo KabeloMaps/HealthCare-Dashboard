@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+//create an interface to define the structure of the objects
 export interface DiagnosticValue {
   value: number;
   levels: string;
@@ -32,9 +33,11 @@ export interface Patient {
 }
 
 export default function PatientSideBar() {
-  //create state for the data
+  //create state for the data fetched
   const [data, setData] = useState<Patient[]>([]);
+  //create state to check whether the data is being fetched
   const [loading, setLoading] = useState<boolean>(true);
+  //create state to check fetch errors
   const [error, setError] = useState<string | null>(null);
 
   const url = "https://fedskillstest.coalitiontechnologies.workers.dev";
@@ -42,12 +45,11 @@ export default function PatientSideBar() {
   useEffect(() => {
     const fetchPatients = async () => {
       try {
-        //import the credentials
         const username = import.meta.env.VITE_API_USERNAME;
         const password = import.meta.env.VITE_API_PASSWORD;
 
         if (!username || !password) {
-          throw new Error("Missing API Credentials  ");
+          throw new Error("Incorrect API Credentials  ");
         }
 
         // encrypt the key yourself dynamically using proper runtime methods
@@ -77,7 +79,7 @@ export default function PatientSideBar() {
     fetchPatients();
   }, []);
 
-  if (loading === true) {
+  if (loading) {
     return <div>Loading patient data...</div>;
   }
 
@@ -87,12 +89,10 @@ export default function PatientSideBar() {
 
   return (
     <div
-      className="patient-panel absolute flex flex-col items-start gap-5 p-4"
+      className="patient-panel flex flex-col items-start gap-5 p-4 "
       style={{
         top: "105px",
         left: "18px",
-        width: "367px",
-        height: "860px",
         background: "#FFFFFF",
         borderRadius: "16px",
         opacity: 1,

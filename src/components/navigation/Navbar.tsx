@@ -35,7 +35,7 @@ export default function NavBar() {
   };
 
   return (
-    <div className="navbar flex items-center justify-between bg-[#FFFFFF] rounded-full p-5 m-3.5 absolute inset-x-0 top-0 h-16">
+    <div className="navbar flex items-center justify-between bg-[#FFFFFF] rounded-full p-5 m-3.5   inset-x-0 top-0 h-16">
       <div className="flex items-center justify-start">
         <img src={logo} alt="nav-logo" className="h-8 w-auto" />
       </div>

@@ -1,11 +1,11 @@
 import NavBar from "../navigation/Navbar";
-import PatientSideBar from "../sidebar/patien-sidebar";
+import Main from "../main/Main";
 
 function App() {
   return (
     <>
       <NavBar />
-      <PatientSideBar />
+      <Main />
     </>
   );
 }
