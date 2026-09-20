@@ -1,92 +1,10 @@
-import { useEffect, useState } from "react";
+import type { Patient } from "../main/Main";
 
-//create an interface to define the structure of the objects
-export interface DiagnosticValue {
-  value: number;
-  levels: string;
+export interface PatientSideBarProps {
+  patients: Patient[];
 }
 
-export interface BloodPressure {
-  systolic: DiagnosticValue;
-  diastolic: DiagnosticValue;
-}
-
-export interface DiagnosisHistory {
-  month: string;
-  year: number;
-  blood_pressure: BloodPressure;
-  heart_rate: DiagnosticValue;
-  respiratory_rate: DiagnosticValue;
-  temperature: DiagnosticValue;
-}
-
-export interface Patient {
-  name: string;
-  gender: string;
-  age: number;
-  profile_picture: string;
-  date_of_birth: string;
-  phone_number: string;
-  emergency_contact: string;
-  insurance_type: string;
-  diagnosis_history: DiagnosisHistory[];
-}
-
-export default function PatientSideBar() {
-  //create state for the data fetched
-  const [data, setData] = useState<Patient[]>([]);
-  //create state to check whether the data is being fetched
-  const [loading, setLoading] = useState<boolean>(true);
-  //create state to check fetch errors
-  const [error, setError] = useState<string | null>(null);
-
-  const url = "https://fedskillstest.coalitiontechnologies.workers.dev";
-
-  useEffect(() => {
-    const fetchPatients = async () => {
-      try {
-        const username = import.meta.env.VITE_API_USERNAME;
-        const password = import.meta.env.VITE_API_PASSWORD;
-
-        if (!username || !password) {
-          throw new Error("Incorrect API Credentials  ");
-        }
-
-        // encrypt the key yourself dynamically using proper runtime methods
-        const encryptedKey = btoa(`${username}:${password}`);
-
-        const response = await fetch(url, {
-          method: "GET",
-          headers: {
-            Authorization: `Basic ${encryptedKey}`,
-            Accept: "application/json",
-          },
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const jsonData = await response.json();
-        setData(jsonData);
-        setLoading(false);
-      } catch (err: any) {
-        setError(err.message);
-        setLoading(false);
-      }
-    };
-
-    fetchPatients();
-  }, []);
-
-  if (loading) {
-    return <div>Loading patient data...</div>;
-  }
-
-  if (error !== null) {
-    return <div>Error: {error}</div>;
-  }
-
+export default function PatientSideBar({ patients }: PatientSideBarProps) {
   return (
     <div
       className="patient-panel flex flex-col items-start gap-5 p-4 "
@@ -109,7 +27,7 @@ export default function PatientSideBar() {
 
       <div className="patient-cards flex flex-col gap-4 w-full">
         <div className="patient-cards flex flex-col gap-4 w-full">
-          {data.slice(0, 12).map((item) => (
+          {patients.slice(0, 12).map((item) => (
             <div
               key={item.name}
               className="patient-info flex items-center justify-between pt-0.5 w-full cursor-pointer hover:bg-[#D8FCF7] p-2 rounded-lg"
