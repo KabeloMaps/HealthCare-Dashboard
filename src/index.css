@@ -2,6 +2,16 @@
 @import "tw-animate-css";
 @import "@fontsource-variable/geist";
 
+/* Map your CSS variables to Tailwind v4 theme utility tokens */
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --radius-lg: var(--radius);
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -33,19 +43,5 @@ body,
   margin: 0;
   min-height: 100vh;
   min-width: 100%;
-}
-
-@theme {
-  /* Set Geist as your default primary sans font system-wide */
-  --font-sans: "Geist Variable", sans-serif;
-  --font-heading: "Geist Variable", sans-serif;
-}
-
-@layer base {
-  body {
-    @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
-  }
+  background-color: #e2e5e8;
 }
