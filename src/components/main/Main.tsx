@@ -47,7 +47,7 @@ export default function Main() {
   //create state for tracking the current active patient
   const [activePatient, setActivePatient] = useState(0);
 
-  const activePatientHandler = (index) => {
+  const activePatientHandler = (index: number) => {
     setActivePatient(index);
   };
 
