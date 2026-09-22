@@ -27,6 +27,7 @@ Patient Management:
 ### What I learned
 
 - How to use props for passing information to components
+- Dynamic array indexing where I used a state variable to look up active data dynamically (`data[activePatient]`) instead of using a hardcoded array position.
 
 ### What I struggled with
 
