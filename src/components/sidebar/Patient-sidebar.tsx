@@ -20,7 +20,7 @@ export default function PatientSideBar({ patients }: PatientSideBarProps) {
         <h1 className="font-bold text-[24px]">Patients</h1>
         <img
           className="h-4 w-4 cursor-pointer"
-          src="/src/assets/SideBar/search.svg"
+          src="/public/assets/SideBar/search.svg"
           alt="search"
         />
       </div>

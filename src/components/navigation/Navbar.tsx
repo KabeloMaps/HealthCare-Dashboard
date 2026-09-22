@@ -1,24 +1,14 @@
-import logo from "../../assets/NavBar/TestLogo.svg";
-import homeIcon from "../../assets/NavBar/home.svg";
-import patientsIcon from "../../assets/NavBar/group_fIll.svg";
-import scheduleIcon from "../../assets/NavBar/calendar.svg";
-import messagesIcon from "../../assets/NavBar/chat_bubble.svg";
-import transactionsIcon from "../../assets/NavBar/credit_card.svg";
-import settingsIcon from "../../assets/NavBar/settings.svg";
-import optionsIcon from "../../assets/NavBar/Options.svg";
-import doctorIcon from "../../assets/NavBar/doctor.png";
-
 export default function NavBar() {
   const navItems = [
-    { label: "Overview", icon: homeIcon },
-    { label: "Patients", icon: patientsIcon },
-    { label: "Schedule", icon: scheduleIcon },
-    { label: "Messages", icon: messagesIcon },
-    { label: "Transactions", icon: transactionsIcon },
+    { label: "Overview", icon: "/assets/NavBar/home.svg" },
+    { label: "Patients", icon: "/assets/NavBar/group_fIll.svg" },
+    { label: "Schedule", icon: "/assets/NavBar/calendar.svg" },
+    { label: "Messages", icon: "/assets/NavBar/chat_bubble.svg" },
+    { label: "Transactions", icon: "/assets/NavBar/credit_card.svg" },
   ];
 
   const navProfile = {
-    icon: doctorIcon,
+    icon: "/assets/NavBar/doctor.png",
     name: "Dr. Jose Simmons",
     description: "General Practitioner",
   };
@@ -37,7 +27,11 @@ export default function NavBar() {
   return (
     <div className="navbar flex items-center justify-between bg-[#FFFFFF] rounded-full p-5 m-3.5   inset-x-0 top-0 h-16">
       <div className="flex items-center justify-start">
-        <img src={logo} alt="nav-logo" className="h-8 w-auto" />
+        <img
+          src="/assets/NavBar/TestLogo.svg"
+          alt="nav-logo"
+          className="h-8 w-auto"
+        />
       </div>
 
       <nav className="flex items-center justify-center overflow-hidden">
@@ -75,12 +69,12 @@ export default function NavBar() {
             </div>
             <div className="options flex items-center justify-center gap-3 pl-3">
               <img
-                src={settingsIcon}
+                src="/assets/NavBar/settings.svg"
                 alt="settings-icon"
                 className="h-5 w-5 cursor-pointer"
               />
               <img
-                src={optionsIcon}
+                src="/assets/NavBar/Options.svg"
                 alt="options-icon"
                 className="h-5 w-5 cursor-pointer"
               />

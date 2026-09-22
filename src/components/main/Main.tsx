@@ -44,6 +44,9 @@ export default function Main() {
   //create state to check fetch errors
   const [error, setError] = useState<string | null>(null);
 
+  //create state to treack which patient is active
+  const [activePatient, setActivePatient] = useState(0);
+
   const url = "https://fedskillstest.coalitiontechnologies.workers.dev";
 
   useEffect(() => {

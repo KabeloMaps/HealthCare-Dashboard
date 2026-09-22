@@ -46,7 +46,7 @@ export default function PatientInfo({ patient }: PatientInfoProps) {
           {/* Date of Birth Section */}
           <div className="Extra-Info flex items-center gap-3">
             <img
-              src="/src/assets/Patient Infomation Icon/BirthIcon.svg"
+              src="/public/assets/Patient Infomation Icon/BirthIcon.svg"
               className="w-12 h-12 p-2"
               alt="Birth Icon"
             />
@@ -62,7 +62,7 @@ export default function PatientInfo({ patient }: PatientInfoProps) {
           {/* Gender Section */}
           <div className="Extra-Info flex items-center gap-3">
             <img
-              src="/src/assets/Patient Infomation Icon/FemaleIcon.svg"
+              src="/public/assets/Patient Infomation Icon/FemaleIcon.svg"
               className="w-12 h-12 p-2"
               alt="Gender Icon"
             />
@@ -75,7 +75,7 @@ export default function PatientInfo({ patient }: PatientInfoProps) {
           {/* Phone Number Section */}
           <div className="Extra-Info flex items-center gap-3">
             <img
-              src="/src/assets/Patient Infomation Icon/PhoneIcon.svg"
+              src="/public/assets/Patient Infomation Icon/PhoneIcon.svg"
               className="w-12 h-12 p-2"
               alt="Phone Icon"
             />
@@ -88,7 +88,7 @@ export default function PatientInfo({ patient }: PatientInfoProps) {
           {/* Emergency Contact Section */}
           <div className="Extra-Info flex items-center gap-3">
             <img
-              src="/src/assets/Patient Infomation Icon/PhoneIcon.svg"
+              src="/public/assets/Patient Infomation Icon/PhoneIcon.svg"
               className="w-12 h-12 p-2"
               alt="Emergency Contact Icon"
             />
@@ -101,7 +101,7 @@ export default function PatientInfo({ patient }: PatientInfoProps) {
           {/* Insurance Provider Section */}
           <div className="Extra-Info flex items-center gap-3">
             <img
-              src="/src/assets/Patient Infomation Icon/InsuranceIcon.svg"
+              src="/public/assets/Patient Infomation Icon/InsuranceIcon.svg"
               className="w-12 h-12 p-2"
               alt="Insurance Icon"
             />
@@ -111,7 +111,7 @@ export default function PatientInfo({ patient }: PatientInfoProps) {
             </div>
           </div>
           <button className="flex w-full justify-center">
-            <span className="font-bold rounded-full bg-[] bg-[#01F0D0] p-2.5">
+            <span className="font-bold` rounded-full bg-[] bg-[#01F0D0] p-2.5">
               Show All Information
             </span>
           </button>
