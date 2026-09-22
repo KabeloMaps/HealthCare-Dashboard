@@ -44,8 +44,12 @@ export default function Main() {
   //create state to check fetch errors
   const [error, setError] = useState<string | null>(null);
 
-  //create state to treack which patient is active
+  //create state for tracking the current active patient
   const [activePatient, setActivePatient] = useState(0);
+
+  const activePatientHandler = (index) => {
+    setActivePatient(index);
+  };
 
   const url = "https://fedskillstest.coalitiontechnologies.workers.dev";
 
@@ -96,9 +100,9 @@ export default function Main() {
 
   return (
     <main className="grid grid-cols-[367px_766px_1fr]  gap-x-8  m-3.5 ">
-      <PatientSideBar patients={data} />
+      <PatientSideBar patients={data} indexChange={activePatientHandler} />
       <Diagnosis />
-      <PatientInfo patient={data[3]} />
+      <PatientInfo patient={data[activePatient]} />
     </main>
   );
 }
